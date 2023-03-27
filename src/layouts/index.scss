@@ -1,0 +1,32 @@
+@import '../styles/mixin';
+@import '../styles/theme';
+//
+:global {
+  .mux-layout {
+    background: $default-background-color;
+    min-height: 100vh;
+    width: 100vw;
+    &-header {
+      padding: 0;
+      margin: 0;
+      line-height: 3.6;
+      background: transparent;
+      @include square(0);
+    }
+    &-content {
+      background: $default-background-color;
+    }
+    &-footer {
+      padding: 0;
+      margin: 0 auto;
+      color: $font-initialize-color;
+      background: transparent;
+    }
+    &-loading {
+      @include center-middle;
+      .ant-spin-text {
+        margin-top: 8%;
+      }
+    }
+  }
+}

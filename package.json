@@ -1,0 +1,100 @@
+{
+  "name": "GPT Web",
+  "version": "1.0.0",
+  "description": "Front-end of GPT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yujvv/GPT-WEB"
+  },
+  "private": true,
+  "scripts": {
+    "start": "cross-env APP_TYPE=site umi dev",
+    "build": "umi build",
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "test": "umi test",
+    "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
+    "lint": "eslint --ext .js src && npm run lint:style",
+    "lint:fix": "eslint --fix --ext .js src && npm run lint:style",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx",
+    "precommit": "npm run lint-staged",
+    "prettier": "prettier --write ./src/**/**/**/*"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "animejs": "^3.1.0",
+    "antd": "^4.0.4",
+    "classnames": "^2.2.6",
+    "dva": "^2.4.1",
+    "enquire-js": "^0.2.1",
+    "lodash.isequal": "^4.5.0",
+    "memoize-one": "^5.1.1",
+    "omit.js": "^1.0.2",
+    "path-to-regexp": "^6.1.0",
+    "prop-types": "^15.7.2",
+    "rc-texty": "^0.2.0",
+    "rc-tween-one": "^2.6.8",
+    "react": "^16.13.1",
+    "react-container-query": "^0.11.1",
+    "react-intl": "^4.3.1",
+    "umi": "2.13.9",
+    "umi-plugin-react": "1.15.5",
+    "umi-request": "^1.2.19",
+    "url-polyfill": "^1.1.8"
+  },
+  "devDependencies": {
+    "@umijs/fabric": "^2.0.6",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-umi": "^1.6.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.9",
+    "node-sass": "^4.13.1",
+    "prettier": "2.0.2",
+    "react-document-title": "^2.0.3",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.16.0",
+    "svg-sprite-loader": "^4.2.1"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^2.1.1"
+  },
+  "lint-staged": {
+    "**/*.scss": "stylelint --syntax scss",
+    "**/*.{js,jsx,tsx,ts,scss,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.{js,ts,tsx}": "npm run lint-staged:js"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.scss",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  }
+}

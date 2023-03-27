@@ -1,0 +1,91 @@
+@import '../../styles/theme';
+@import '../../styles/mixin';
+
+:global {
+  .copyright {
+    p {
+      margin: 0;
+      > a {
+        color: $color-09;
+      }
+    }
+    padding: 0 0.6rem;
+    color: $font-minor-color;
+    text-align: center;
+    opacity: 0;
+    user-select: none; //文本禁止复制
+    @include custom-position(relative, $bottom: 0.35rem);
+    > div.texty {
+      &:first-of-type {
+        max-width: 310px;
+        height: 1.4rem;
+        margin: 0 auto;
+        line-height: 1.4rem;
+        text-align: center;
+      }
+    }
+    > a {
+      padding: 0 0.22rem;
+      color: currentColor;
+      color: rgba($font-initialize-color, 0.8);
+      &::after {
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid currentColor;
+        opacity: 0;
+        transition: opacity 0.75s ease;
+        content: '';
+      }
+      &:hover,
+      .highlighted {
+        color: $primary-color;
+        transition: color 0.25s ease;
+      }
+    }
+    a,
+    em {
+      transition: color 0.75s ease;
+      &.version {
+        color: $color-09;
+      }
+      &.date {
+        padding-left: 0.2rem;
+        color: $color-01;
+      }
+      &.team {
+        color: $color-06;
+      }
+      &.code {
+        color: $color-10;
+      }
+    }
+    em {
+      padding-right: 0.3rem;
+      font-style: normal;
+    }
+    .texty-inline {
+      display: inline;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  :global {
+    .copyright {
+      font-size: 0.88rem;
+      .texty-inline {
+        display: inline-block;
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  :global {
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
+}

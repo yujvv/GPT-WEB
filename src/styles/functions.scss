@@ -1,0 +1,28 @@
+/*
+ * @fileoverview | sass function
+*/
+//去掉一个值的单位，如12px => 12
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+//px -> rem 使用方式如rem(300px)
+@function rem($px) {
+  @return strip-units(($px / $font-size-base)) * 1rem;
+}
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix($font-initialize-color, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix($dark-color, $color, $percentage);
+}
