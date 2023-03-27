@@ -8,7 +8,9 @@ const fireworks = canvasEl => {
   const numberOfParticules = Number(window.location.href.split('?')[1]) || 40;
   let pointerX = 0;
   let pointerY = 0;
-  const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+  // const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+  const colors = ['#FFFFFF', '#F5F5F5'];
+
   // 更新点击位置
   function updateCoords(e) {
     pointerX = e.clientX || e.touches[0].clientX;
