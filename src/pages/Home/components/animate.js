@@ -130,11 +130,11 @@ const logoAnimation = (logoEl, pathEls) => {
       duration: 3000,
       easing: 'easeOutCubic',
       // begin: a => a.animatables[0].target.classList.add('highlighted'),
-      update: a => {
-        let value = a.animatables[0].target.innerHTML;
-        value = parseFloat(value).toFixed(1);
-        a.animatables[0].target.innerHTML = value;
-      },
+      // update: a => {
+      //   let value = a.animatables[0].target.innerHTML;
+      //   value = parseFloat(value).toFixed(1);
+      //   a.animatables[0].target.innerHTML = value;
+      // },
       // complete: a => a.animatables[0].target.classList.remove('highlighted'),
       offset: '-=500',
     })

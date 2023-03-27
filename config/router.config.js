@@ -9,6 +9,16 @@ export default [
         name: '',
         component: './Home',
       },
+      {
+        path: '/GPT',
+        name: '',
+        component: './Unity',
+      },
+      {
+        path: '/chatgpt',
+        name: '',
+        component: './ChatGPT',
+      },
     ],
   },
 ];

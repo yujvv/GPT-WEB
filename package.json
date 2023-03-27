@@ -37,10 +37,12 @@
     "react": "^16.13.1",
     "react-container-query": "^0.11.1",
     "react-intl": "^4.3.1",
+    "react-unity-webgl": "^9.4.0",
     "umi": "2.13.9",
     "umi-plugin-react": "1.15.5",
     "umi-request": "^1.2.19",
-    "url-polyfill": "^1.1.8"
+    "url-polyfill": "^1.1.8",
+    "webgl-polyfill": "^0.1.4"
   },
   "devDependencies": {
     "@umijs/fabric": "^2.0.6",
